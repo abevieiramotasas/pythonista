@@ -1,0 +1,3 @@
+pychecker:
+    execucao:
+        pychecker file.py

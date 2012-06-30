@@ -1,0 +1,64 @@
+docstrings: como usar
+comentarios: como funciona
+
+
+Tips
+
+    swap:
+        no lugar de:
+            temp = a
+            a = b
+            b = temp
+        usar:
+            a, b = b, a
+
+    ultima expressao valorada:
+        no interpretador interativo, o underscore _ guarda o valorada   
+        da ultima expressao valorada
+        
+    join de lista de strings:
+        nao usar:
+            result = '' 
+            for s in lista:
+                result += s
+        usar:
+            ''.join(lista)
+            
+    usar default do get em dicts:
+        no lugar de verificar se esta no dic e dar um tratamento diferenciado:
+            if x in dic:
+                y = dic.get(x)
+            else:
+                y = 0
+                
+        utilizar get com default:
+            y = dic.get(x, 0)
+            
+    usar setdefault do dict:
+        no lugar de verificar se uma key esta no dicionario e cc inicializa-la:
+            if x in dic:
+                dic[x].append(data)
+            else:
+                dic[x] = [data]
+                
+        usar setdefault:
+            dic.setdefault(x, []).append(data)
+            
+    criar dicionario a partir de duas listas:
+        dic = dict(zip(lista1, lista2))
+        
+    parametros default sao inicializados na definicao da funcao:
+        exemplo de engano:
+            def bad_append(item, lista=[]):
+                lista.append(item)
+                return lista
+                
+            o name lista, por ser inicializado na definicao da funcao, mantem os itens de chamadas anteriores
+            
+    xrange eh a versao lazy de range
+    
+    quando um modulo eh executado, o atributo __name__ eh setado para __main__, por isso
+    a verificacao:
+        if __name__ == '__main__':
+            script
+            
